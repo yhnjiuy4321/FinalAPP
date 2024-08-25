@@ -1,5 +1,8 @@
 package com.example.infoinput_hp_menu;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //設定日期
         Calendar calendar = Calendar.getInstance();
         TextView dateTextView = findViewById(R.id.dateTextView);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 EEEE", Locale.getDefault());
@@ -49,8 +53,30 @@ public class MainActivity extends AppCompatActivity {
         dateTextView.setText(date);
 
 
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
+        //設定提醒
+        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(this, Reminder.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);//FLAG_UPDATE_CURRENT:如果該PendingIntent已經存在，則用新的Intent更新它
+
+        // 每10秒提醒一次
+        long interval = 10 * 1000;//
+        long triggerAtMillis = System.currentTimeMillis() + interval;
+
+        /*long interval = AlarmManager.INTERVAL_HOUR;
+        long triggerAtMillis = System.currentTimeMillis() + interval;*/
+
+        // 使用定期提醒
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, triggerAtMillis, interval, pendingIntent);
+
+        // 或者使用精确提醒
+        // alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
+
+
+
+
+
+        Intent intentW = getIntent();
+        Bundle bundle = intentW.getExtras();
         if (bundle != null) {
             dailyAmount = bundle.getInt("daily_amount");
             String username = bundle.getString("name");
@@ -135,5 +161,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
+
+    private void setReminder() {
+         }
+
 
 }
