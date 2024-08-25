@@ -121,13 +121,9 @@
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:layout_weight="0.7"
-                android:backgroundTint="#5D665D"
-                android:backgroundTintMode="src_in"
-                android:entries="@array/select_activity"
-                android:spinnerMode="dialog"
-                />
+                android:entries="@array/select_activity" />
 
         </LinearLayout>
 
@@ -137,6 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:backgroundTint="#2B6F1B"
+            android:onClick="submit"
             android:text="確定送出"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
