@@ -118,15 +118,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/selectButton"
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="0.7"
-                android:text="請選擇活動量"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:backgroundTint="#5D665D"
+                android:backgroundTintMode="src_in"
+                android:entries="@array/select_activity"
+                android:spinnerMode="dialog"
+                />
+
         </LinearLayout>
 
         <Button
