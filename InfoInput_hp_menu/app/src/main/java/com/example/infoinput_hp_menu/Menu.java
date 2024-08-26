@@ -78,7 +78,9 @@ public class Menu extends AppCompatActivity {
     }
 
     }*/
-
-
+    public void history(View view) {
+        Intent intent = new Intent(Menu.this, HistoryActivity.class);
+        startActivity(intent);
+    }
 
 }

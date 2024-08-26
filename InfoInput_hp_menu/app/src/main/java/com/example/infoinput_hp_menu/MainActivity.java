@@ -5,6 +5,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
@@ -52,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
         TextView date = findViewById(R.id.dateTextView);
         date.setText(currentDate);
 
-
         Intent intentW = getIntent();
         Bundle bundle = intentW.getExtras();
         if (bundle != null) {
@@ -60,10 +61,11 @@ public class MainActivity extends AppCompatActivity {
             String username = bundle.getString("name");
             title = findViewById(R.id.daliyAmount);
             Name = findViewById(R.id.User_name);
-            title.setText("您每日需要飲水量為："+dailyAmount+"ml");
+            title.setText("您每日需要飲水量為：" + dailyAmount + "ml");
             Name.setText(username);
         }
-       ImageButton addButton = findViewById(R.id.addButton);
+
+        ImageButton addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // 新增的 "記錄今日飲水量" 按鈕
+        Button saveButton = findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveWaterIntake();
+            }
+        });
     }
 
     private void showAddWaterDialog() {
@@ -81,8 +91,6 @@ public class MainActivity extends AppCompatActivity {
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setPadding(50, 40, 50, 10);
         layout.setGravity(Gravity.CENTER_HORIZONTAL);
-
-
 
         // Create a TextView for the title
         TextView title = new TextView(this);
@@ -122,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         waterAmount += amount;
         updateUI();
     }
+
     private void updateUI() {
         TextView amountShow = findViewById(R.id.amountShow);
         amountShow.setText(String.valueOf(waterAmount));
@@ -136,7 +145,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void menu(View view){
+    private void saveWaterIntake() {
+        // 獲取 SharedPreferences
+        SharedPreferences sharedPref = getSharedPreferences("WaterIntakeHistory", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+
+        // 保存今日的飲水量
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        String currentDate = sdf.format(Calendar.getInstance().getTime());
+        editor.putInt(currentDate, waterAmount);
+        editor.apply();
+
+        // 顯示提示
+        Toast.makeText(this, "今日飲水量已記錄", Toast.LENGTH_SHORT).show();
+    }
+    public void menu(View view) {
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
