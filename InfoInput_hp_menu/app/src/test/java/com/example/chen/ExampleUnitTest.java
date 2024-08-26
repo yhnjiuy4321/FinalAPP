@@ -1,4 +1,4 @@
-package com.example.infoinput_hp_menu;
+package com.example.chen;
 
 import org.junit.Test;
 

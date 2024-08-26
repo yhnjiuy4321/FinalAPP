@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "InfoInput_hp_menu"
+rootProject.name = "chen"
 include(":app")
- 
