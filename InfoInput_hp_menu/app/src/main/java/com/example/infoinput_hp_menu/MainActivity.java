@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private int waterAmount;
     private int dailyAmount;
     private ActivityResultLauncher<Intent> intentActivityResultLauncher;
+    private boolean getgoal = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,34 +46,11 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        //設定日期
-        Calendar calendar = Calendar.getInstance();
-        TextView dateTextView = findViewById(R.id.dateTextView);
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日 EEEE", Locale.getDefault());
-        String date = dateFormat.format(calendar.getTime());
-        dateTextView.setText(date);
-
-
-        //設定提醒
-        AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        Intent intent = new Intent(this, Reminder.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);//FLAG_UPDATE_CURRENT:如果該PendingIntent已經存在，則用新的Intent更新它
-
-        // 每10秒提醒一次
-        long interval = 10 * 1000;//
-        long triggerAtMillis = System.currentTimeMillis() + interval;
-
-        /*long interval = AlarmManager.INTERVAL_HOUR;
-        long triggerAtMillis = System.currentTimeMillis() + interval;*/
-
-        // 使用定期提醒
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, triggerAtMillis, interval, pendingIntent);
-
-        // 或者使用精确提醒
-        // alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
-
-
-
+        //time:yyyy-MM-dd 星期
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd E", Locale.getDefault());
+        String currentDate = sdf.format(Calendar.getInstance().getTime());
+        TextView date = findViewById(R.id.dateTextView);
+        date.setText(currentDate);
 
 
         Intent intentW = getIntent();
@@ -92,10 +70,6 @@ public class MainActivity extends AppCompatActivity {
                 showAddWaterDialog();
             }
         });
-
-    }
-
-    private void setDateTextView() {
 
     }
 
@@ -154,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
         //當喝水量達標時，將數字顯示為綠色
         if (waterAmount >= dailyAmount) {
             amountShow.setTextColor(getResources().getColor(R.color.green));
+            if(getgoal) {
+                Intent intent = new Intent(this, AchievementActivity.class);
+                startActivity(intent);
+                getgoal = false;
+            }
         }
     }
 
@@ -161,9 +140,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
     }
-
-    private void setReminder() {
-         }
-
-
 }

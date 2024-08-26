@@ -67,7 +67,6 @@ public class Menu extends AppCompatActivity {
     }
 
 
-
     public void balance(View view){
         Intent intent = new Intent(this, Setting.class);
         startActivity(intent);
@@ -78,9 +77,6 @@ public class Menu extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void reminder(View view){
-        Intent intent = new Intent(this, setting.class);
-        startActivity(intent);
     }*/
 
 

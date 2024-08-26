@@ -41,15 +41,6 @@
                 android:textSize="24sp" />
 
             <Button
-                android:id="@+id/reset_reminder"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginBottom="40dp"
-                android:text="提醒功能設定"
-                android:textSize="24sp" />
-
-            <Button
                 android:id="@+id/balance_cal"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"

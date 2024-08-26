@@ -14,7 +14,6 @@
         android:background="#FFFFFF"
         android:backgroundTint="#000000"
         android:gravity="center"
-        android:text="yyyy年MM月dd日 EEEE"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
