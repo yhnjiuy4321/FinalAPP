@@ -1,10 +1,3 @@
 <resources>
-    <string name="app_name">InfoInput_hp_menu</string>
-    <string-array name="select_activity">
-        <item>很多</item>
-        <item>較多</item>
-        <item>適中</item>
-        <item>較少</item>
-        <item>很少</item>
-    </string-array>
+    <string name="app_name">chen</string>
 </resources>
