@@ -1,4 +1,4 @@
-package com.example.chen;
+package com.example.infoinput_hp_menu;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.chen", appContext.getPackageName());
+        assertEquals("com.example.infoinput_hp_menu", appContext.getPackageName());
     }
 }

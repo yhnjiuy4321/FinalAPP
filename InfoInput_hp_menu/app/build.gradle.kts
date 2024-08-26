@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.chen"
+    namespace = "com.example.infoinput_hp_menu"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.chen"
+        applicationId = "com.example.infoinput_hp_menu"
         minSdk = 30
         targetSdk = 34
         versionCode = 1
