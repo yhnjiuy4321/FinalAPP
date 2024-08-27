@@ -37,17 +37,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.181" />
-=======
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182" />
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -57,16 +50,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.391"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.561">
-=======
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.601">
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -120,7 +107,6 @@
         android:backgroundTint="#00838F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.339"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -128,13 +114,6 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
 
-=======
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952"
-        app:srcCompat="@android:drawable/ic_input_add" />
-
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
@@ -145,18 +124,10 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
         app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addButton"
         app:layout_constraintVertical_bias="0.272" />
-=======
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addButton"
-        app:layout_constraintVertical_bias="0.05" />
-
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 
     <ImageButton
         android:id="@+id/imageButton2"

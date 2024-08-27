@@ -1,11 +1,5 @@
 package com.example.infoinput_hp_menu;
 
-<<<<<<< HEAD
-=======
-import android.app.AlarmManager;
-import android.app.PendingIntent;
-import android.content.Context;
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,53 +12,29 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-<<<<<<< HEAD
-=======
-
-import androidx.activity.EdgeToEdge;
-import androidx.activity.result.ActivityResultLauncher;
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-<<<<<<< HEAD
-=======
-
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-<<<<<<< HEAD
 import android.content.Context;
-=======
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 public class MainActivity extends AppCompatActivity {
 
     private TextView title;
     private TextView Name;
-<<<<<<< HEAD
     private EditText Texttext1; // 初始化 Texttext1
     private int waterAmount;
     private int dailyAmount;
     private boolean getgoal = true;
     private int ADDAmount;
-=======
-    private int waterAmount;
-    private int dailyAmount;
-    private ActivityResultLauncher<Intent> intentActivityResultLauncher;
-    private boolean getgoal = true;
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
-=======
-        EdgeToEdge.enable(this);
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -89,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             Name.setText(username);
         }
 
-<<<<<<< HEAD
 
         ImageButton addButton = findViewById(R.id.addButton);
         addButton.setOnClickListener(v -> showAddWaterDialog());
@@ -97,24 +66,6 @@ public class MainActivity extends AppCompatActivity {
         // 新增的 "記錄今日飲水量" 按鈕
         Button saveButton = findViewById(R.id.saveButton);
         saveButton.setOnClickListener(v -> saveWaterIntake());
-=======
-        ImageButton addButton = findViewById(R.id.addButton);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAddWaterDialog();
-            }
-        });
-
-        // 新增的 "記錄今日飲水量" 按鈕
-        Button saveButton = findViewById(R.id.saveButton);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveWaterIntake();
-            }
-        });
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
     }
 
     private void showAddWaterDialog() {
@@ -171,11 +122,7 @@ public class MainActivity extends AppCompatActivity {
         //當喝水量達標時，將數字顯示為綠色
         if (waterAmount >= dailyAmount) {
             amountShow.setTextColor(getResources().getColor(R.color.green));
-<<<<<<< HEAD
             if (getgoal) {
-=======
-            if(getgoal) {
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
                 Intent intent = new Intent(this, AchievementActivity.class);
                 startActivity(intent);
                 getgoal = false;
@@ -197,10 +144,7 @@ public class MainActivity extends AppCompatActivity {
         // 顯示提示
         Toast.makeText(this, "今日飲水量已記錄", Toast.LENGTH_SHORT).show();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
     public void menu(View view) {
         Intent intent = new Intent(this, Menu.class);
         startActivity(intent);
