@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+5    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
@@ -14,10 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InfoInput_hp_menu"
         tools:targetApi="31">
+
         <activity
+<<<<<<< HEAD
             android:name=".DrinkingwaterbalanceActivity"
             android:exported="false" />
         <activity
+=======
+>>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
             android:name=".Menu"
             android:exported="false" />
         <activity
@@ -25,7 +30,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -33,7 +37,10 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity android:name=".AchievementActivity" />
+<<<<<<< HEAD
         <activity android:name=".HistoryActivity" />
+=======
+        <activity android:name=".HistoryActivity" /> <!-- 註冊History活動 -->
+>>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
     </application>
-
 </manifest>

@@ -15,14 +15,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+<<<<<<< HEAD
 import android.util.Log;
+=======
+>>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class info_input extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
     int daily_amount = 0;
     double Weight = 0;
 
@@ -115,7 +121,10 @@ public class info_input extends AppCompatActivity implements AdapterView.OnItemS
 
     //計算每日所需水量
     daily_amount = (int) ((user_height + user_weight) *10 *Weight);
+<<<<<<< HEAD
     Log.d("daily_amount", String.valueOf(daily_amount));
+=======
+>>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
 
 
     //Alter提醒是否確定送出資料

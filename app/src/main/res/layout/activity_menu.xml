@@ -48,7 +48,10 @@
                 android:layout_height="80dp"
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginBottom="40dp"
+<<<<<<< HEAD
                 android:onClick="balance"
+=======
+>>>>>>> 474e7dfaf93340674b7008f4a9a381b0fbbd032c
                 android:text="飲水平衡換算"
                 android:textSize="24sp" />
 
